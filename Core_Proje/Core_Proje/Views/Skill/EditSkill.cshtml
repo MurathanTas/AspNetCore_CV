@@ -1,0 +1,53 @@
+﻿@model EntityLayer.Concrete.Skill
+@{
+    ViewData["Title"] = "EditSkill";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+@*<br />
+
+    <div class="card-header border-0">
+        <h3 class="mb-0">Yetenek Düzenleme Sayfası</h3>
+    </div>
+
+    <form asp-action="EditSkill" asp-controller="Skill" method="post">
+        <br />
+
+        <input asp-for="SkillID" type="hidden" />
+
+        <label>Yetenek Başlığı</label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+
+        <label>Değer</label>
+        <input type="text" asp-for="Value" class="form-control" />
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </form>*@
+
+@using (Html.BeginForm("EditSkill", "Skill", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-description"> Yetenek Düzenleme Paneli </p>
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>ID</label>
+                        @Html.TextBoxFor(x => x.SkillID, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Başlık</label>
+                        <input type="text" asp-for="Title" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Oran</label>
+                        <input type="text" asp-for="Value" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                    <button class="btn btn-dark">İptal</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}

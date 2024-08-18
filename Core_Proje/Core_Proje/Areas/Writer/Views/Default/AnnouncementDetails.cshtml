@@ -1,0 +1,18 @@
+﻿@model EntityLayer.Concrete.Announcement
+@{
+    ViewData["Title"] = "AnnouncementDetails";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+
+<form class="form-group" asp-action="AnnouncementDetails" asp-controller="Default">
+    <h4>Duyuru Detayları</h4>
+    <br />
+    <br />
+    <label>ID</label>
+    <input type="text" asp-for="ID" class="form-control" />
+    <br />
+    <label>İçerik</label>
+    <textarea asp-for="Content" class="form-control" rows="10" cols="3"></textarea>
+</form>
+
